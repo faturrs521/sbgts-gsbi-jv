@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\DataArtikel;
+use App\Models\DataKategori;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+class HomeController extends Controller
+{
+    public function home(){
+        // $artikels = DataArtikel::inRandomOrder()->OrderBy('id','DESC');
+        // return view('universal.home', compact('artikels'), [
+        //     "title" => "Home"
+        // ]);
+
+        $data = DB::table('data_artikels')->get();
+        return view('universal.home', [
+            "title" =>"Home", 'data' => $data]);
+
+
+    }
+
+}

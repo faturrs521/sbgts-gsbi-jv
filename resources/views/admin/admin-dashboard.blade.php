@@ -22,7 +22,84 @@
 
                     <!-- Awal Konten -->
                     <div class="container-fluid">
-                        <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+                        <div class="row">
+                            @if (auth()->user()->role == 'admin')
+                                <!-- Awal Data Anggota -->
+                                <div class="col-xl-3 mb-3">
+                                    <div class="card border-left-primary shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <a href="{{ route('admin-data-anggota') }}" class="col mr-2">
+                                                    <div class="text-m font-weight-bold text-primary text-uppercase mb-1">
+                                                        Data Anggota</div>
+                                                </a>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-users"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Akhir Data Anggota -->
+
+                                <!-- Awal Data Pengurus -->
+                                <div class="col-xl-3 mb-3">
+                                    <div class="card border-left-success shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <a href="{{ route('admin-data-anggota') }}" class="col mr-2">
+                                                    <div class="text-m font-weight-bold text-success text-uppercase mb-1">
+                                                        Data Pengurus </div>
+                                                </a>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-users-cog"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Akhir Data Pengurus -->
+
+                                <!-- Awal Data Program Kerja -->
+                                <div class="col-xl-3 mb-3">
+                                    <div class="card border-left-warning shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <a href="{{ route('admin-data-anggota') }}" class="col mr-2">
+                                                    <div class="text-m font-weight-bold text-warning text-uppercase mb-1">
+                                                        Data Kategori </div>
+                                                </a>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-building"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Akhir Data Program Kerja -->
+
+                                <!-- Awal Data Artikel -->
+                                <div class="col-xl-3 mb-3">
+                                    <div class="card border-left-info shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <a href="{{ route('admin-data-anggota') }}" class="col mr-2">
+                                                    <div class="text-m font-weight-bold text-info text-uppercase mb-1">
+                                                        Data Berita Acara </div>
+                                                </a>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-newspaper"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Akhir Data Artikel -->
+                        </div>
+                        @endif
+                        @if (auth()->user()->role == 'user')
+                            <h1>Halaman User</h1>
+                        @endif
                     </div>
                 </div>
                 <!-- Akhir Konten -->
@@ -35,11 +112,6 @@
             <!-- End of Content Wrapper -->
         </div>
         <!-- End of Page Wrapper -->
-
-
-
-
-
 
 
         <!-- Scroll to Top Button-->

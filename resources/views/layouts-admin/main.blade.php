@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Awal Ini Partials Style -->
 @include('layouts-admin.partials-admin.style')
+<!-- Awal Ini Partials Script -->
 
 <body id="page-top">
 

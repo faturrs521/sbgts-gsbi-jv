@@ -7,7 +7,7 @@
     <meta name="author" content="">
 
     <!-- Favicon Logo Di Tittle-->
-    <link rel="icon" href="images/GSBI_Indonesia-kop-preview-removebg-preview.png">
+    <link rel="icon" href="images/GSBI_Indonesia.jpg">
 
     <title>SBGTS-GSBI-JV | {{ $title }}</title>
 
@@ -19,6 +19,8 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('template-admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
+
+
 
     <!-- Toastr -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
