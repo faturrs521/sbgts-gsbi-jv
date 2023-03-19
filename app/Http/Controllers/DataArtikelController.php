@@ -22,7 +22,6 @@ class DataArtikelController extends Controller
     }
 
     public function dataArtikel(Request $request) {
-
         $dataArtikel = DataArtikel::all();
         $dataKategori = DataKategori::all();
         if ($request->has('search')) {

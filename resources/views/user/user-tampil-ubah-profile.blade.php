@@ -50,6 +50,15 @@
                                                         <input type="file" name="foto" class="form-control"
                                                             id="foto" value="{{ $user['foto'] }}">
                                                     </div>
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputEmail1" class="form-label">Gender</label>
+                                                        <select class="form-control" name="jeniskelamin"
+                                                            aria-label="Default select example">
+                                                            <option selected>{{ $user->jeniskelamin }}</option>
+                                                            <option value="pria">Pria</option>
+                                                            <option value="wanita">Wanita</option>
+                                                        </select>
+                                                    </div>
                                                     <div class="form-group">
                                                         <label for="nama">Jabatan</label>
                                                         <input type="text" class="form-control" name="jabatan"

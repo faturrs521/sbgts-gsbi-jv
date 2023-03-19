@@ -21,7 +21,7 @@
                         <div class="container">
                             <div class="carousel-caption relative">
                                 <h1>PTP SBGTS-GSBI <br> PT. Victory Chingluh Indonesia</h1>
-                                <a href="{{ route('login') }}">Login</a>
+                                <a href="{{ route('login') }}">Login Anggota</a>
                             </div>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                         <div class="container">
                             <div class="carousel-caption relative">
                                 <h1>PTP SBGTS-GSBI <br> PT. Victory Chingluh Indonesia</h1>
-                                <a href="{{ route('login') }}">Login</a>
+                                <a href="{{ route('login') }}">Login Anggota</a>
                             </div>
                         </div>
                     </div>
@@ -203,60 +203,27 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="blog-box">
-                            <figure><a href="{{ route('lihat-berita-acara') }}"><img src="images/berita acara/Relawan.png"
-                                        alt="#" /></a>
-                                <span>12 Agustus 2022</span>
-                            </figure>
-                            <div class="travel">
+                    @foreach ($artikels as $artikel)
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="blog-box">
+                                <figure><a href="{{ route('lihat-berita-acara') }}"><img
+                                            src="{{ asset('storage/public/' . $artikel->file) }}" alt="#" /></a>
+                                    <span>{{ date('d M Y', strtotime($artikel->created_at)) }}</span>
+                                </figure>
+
+                                <div class="travel">
+                                    <p><a href="{{ route('lihat-berita-acara') }}">Lihat Lebih Banyak</a></p>
+                                </div>
+                                <h3>{{ $artikel->judul }}</h3>
+                                <p>{{ $artikel->deskripsi }}</p>
                             </div>
-                            <h3>Tim Relawan GSBI</h3>
-                            <p>Kawan-kawan relawan berinteraksi dengan warga yang terdampak bencana alam gempa bumi di Kp.
-                                Pasir Peundeuy Desa. Talaga Kec. Cugenang</p>
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="blog-box">
-                            <figure><a href="https://www.infogsbi.or.id/"><img src="images/berita acara/AudensiUpah.png"
-                                        alt="#" /></a>
-                                <span>06 Desember 2022</span>
-                            </figure>
-                            <div class="travel">
-                            </div>
-                            <h3>Audensi Kenaikan Upah Minimum Tahun 2023</h3>
-                            <p>Audensi terkait kenaikan upah minimum tahun 2023 yang dilakukan di luar dan pindah
-                                kesekretariat daerah</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="blog-box">
-                            <figure><a href="https://www.infogsbi.or.id/"><img src="images/berita acara/RapatPleno.png"
-                                        alt="#" /></a>
-                                <span>24 Febuari 2023</span>
-                            </figure>
-                            <div class="travel">
-                            </div>
-                            <h3>Rapat Sidang Anggota Pleno Ke-1 Periode 2022</h3>
-                            <p>Rapat sidang anggota Pleno ke-1 periode 2022 yang diselenggarakan pada tanggal Jumat, 24-27
-                                Februari 2023 di Cisarua Bogor </p>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="blog-box">
-                            <figure><a href="https://www.infogsbi.or.id/"><img src="images/berita acara/TolakPerpu.png"
-                                        alt="#" /></a>
-                                <span>28 Febuari 2023</span>
-                            </figure>
-                            <div class="travel">
-                            </div>
-                            <h3>Aksi Tolak Perppu Cipta Kerja di Jakarta</h3>
-                            <p>Sejumlah buruh mengikuti aksi unjuk rasa di depan Gedung DPR, Jakarta, Selasa 28/2/2023.
-                                Dalam aksi tersebut mereka menuntut pemerintah untuk segera mencabut Perppu Cipta Kerja</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
+
+                {{ $artikels->render() }}
             </div>
         </div>
         <!-- end our blog -->
@@ -275,23 +242,23 @@
 
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 offset-md-3">
                         <div class="contact">
-
-                            <form>
+                            <form method="POST" action="{{ route('kirim-email') }}" enctype="multipart/form-data">
+                                @csrf
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Name" type="text" name="Name">
+                                        <input class="contactus" placeholder="Nama" type="text" name="nama">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Phone" type="text" name="Email">
+                                        <input class="contactus" placeholder="Email" type="text" name="email">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input class="contactus" placeholder="Email" type="text" name="Email">
+                                        <input class="contactus" placeholder="Handphone" type="number" name="kontak">
                                     </div>
                                     <div class="col-sm-12">
-                                        <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
+                                        <textarea class="textarea" placeholder="Pesan" type="text" name="pesan"></textarea>
                                     </div>
                                     <div class="col-sm-12">
-                                        <button class="send">Send</button>
+                                        <button class="send">Kirim</button>
                                     </div>
                                 </div>
                             </form>

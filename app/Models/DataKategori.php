@@ -13,7 +13,7 @@ class DataKategori extends Model
     protected $guarded = [];
     protected $timestamp = true;
 
-    public function dataArtikel() {
-        return $this->hashMany(DataArtikel::class,'kategori_id','id');
+    public function artikel() {
+        return $this->hashMany(DataArtikel::class);
     }
 }

@@ -60,7 +60,7 @@
                                 </div>
                                 <!-- Akhir Data Pengurus -->
 
-                                <!-- Awal Data Program Kerja -->
+                                <!-- Awal Data Kategori -->
                                 <div class="col-xl-3 mb-3">
                                     <div class="card border-left-warning shadow h-100 py-2">
                                         <div class="card-body">
@@ -70,13 +70,13 @@
                                                         Data Kategori </div>
                                                 </a>
                                                 <div class="col-auto">
-                                                    <i class="fas fa-building"></i>
+                                                    <i class="fa fa-list-ul"></i>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Akhir Data Program Kerja -->
+                                <!-- Akhir Data Kategori -->
 
                                 <!-- Awal Data Artikel -->
                                 <div class="col-xl-3 mb-3">
@@ -137,7 +137,5 @@
                 </div>
             </div>
         </div>
-
-
     </body>
 @endsection

@@ -61,7 +61,7 @@
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Judul</th>
-                                        <th scope="col">ID Kategori</th>
+                                        <th scope="col">Kategori</th>
                                         <th scope="col">Deskripsi</th>
                                     </tr>
                                 </thead>
@@ -75,7 +75,7 @@
                                             <td><a
                                                     href="{{ route('admin-detail-data-artikel', $row->id) }}">{{ $row->judul }}</a>
                                             </td>
-                                            <td>{{ $row->kategori_id }}</td>
+                                            <td>{{ $row->kategori->nama }}</td>
                                             <td>{{ Str::limit($row->deskripsi, 50) }}</td>
                                             <td>
                                                 <a href="{{ route('admin-tampil-data-artikel', $row->id) }}"

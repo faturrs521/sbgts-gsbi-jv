@@ -73,9 +73,20 @@
         @if (auth()->user()->role == 'user')
             <!-- Nav Item Data Berita Acara -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin-data-artikel') }}">
-                    <i class="fas fa-newspaper"></i>
+                <a class="nav-link" href="{{ route('user-kta') }}">
+                    <i class="fa fa-id-card" aria-hidden="true"></i>
                     <span>KTA Digital</span></a>
+            </li>
+            <!-- Garis -->
+            <hr class="sidebar-divider">
+        @endif
+
+        @if (auth()->user()->role == 'user')
+            <!-- Nav Item Data Berita Acara -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('user-ubah-password') }}">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                    <span>Ubah Password</span></a>
             </li>
             <!-- Garis -->
             <hr class="sidebar-divider">

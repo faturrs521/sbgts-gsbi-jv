@@ -14,7 +14,7 @@ class DataArtikel extends Model
     protected $timestamp = true;
 
 
-    public function dataKategori() {
-        return $this->belongsTo(DataKategori::class,'Kategori_id','id');
+    public function kategori() {
+        return $this->belongsTo(DataKategori::class);
     }
 }

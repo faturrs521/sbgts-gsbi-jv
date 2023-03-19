@@ -1,17 +1,19 @@
 <?php
 
-use App\Models\DataAnggota;
 use App\Models\User;
+use App\Models\DataAnggota;
 use App\Http\Middleware\HakAkse;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KTAController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LoginController;
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DataAnggotaController;
 use App\Http\Controllers\DataArtikelController;
 use App\Http\Controllers\UbahProfileController;
 use App\Http\Controllers\DataKategoriController;
 use App\Http\Controllers\DataPengurusController;
+use App\Http\Controllers\UbahPasswordController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\LihatBeritaAcaraController;
 
@@ -25,17 +27,11 @@ use App\Http\Controllers\LihatBeritaAcaraController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/lihat-artikel', function () {
-//     return view('lihat-artikel', [
-//         "title" => "Lihat Artikel"
-//     ]);
-// });
 Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/kirim-email', [HomeController::class, 'kirimEmail'])->name('kirim-email');
+
 Route::get('/lihat-berita-acara', [LihatBeritaAcaraController::class, 'lihatBeritaAcara'])->name('lihat-berita-acara');
-
-
-
 
 //Login
 Route::get('/login', [LoginController::class, 'login'])->name('login');
@@ -65,7 +61,6 @@ Route::get('/hapus-data-anggota/{id}', [DataAnggotaController::class, 'hapusData
 Route::get('/export-excel', [DataAnggotaController::class, 'exportExcel'])->name('admin-export-excel-data-anggota');
 //Import Excel
 Route::post('/import-excel-data-anggota', [DataAnggotaController::class, 'importExcel'])->name('admin-import-excel-data-anggota');
-
 //Admin Kelola Data Pengurus
 Route::get('/data-pengurus', [DataPengurusController::class, 'dataPengurus'])->name('admin-data-pengurus');
 Route::get('/tambah-data-pengurus', [DataPengurusController::class, 'tambahDataPengurus'])->name('admin-tambah-data-pengurus');
@@ -98,10 +93,17 @@ Route::get('/hapus-data-kategori/{id}', [DataKategoriController::class, 'hapusDa
 
 
 //Route Group Middleware Untuk User
-Route::group(['middleware' => ['auth','hakakses:admin,user']], function(){
-// Admin
+Route::group(['middleware' => ['auth','hakakses:user']], function(){
+// User
 Route::get('/dashboard', [AdminDashboardController::class, 'adminDashboard'])->name('admin-dashboard');
+//User Ubah Profile
 Route::get('/tampil-ubah-profile', [UbahProfileController::class, 'tampilUbahProfile'])->name('user-tampil-ubah-profile');
 Route::post('/ubah-profile', [UbahProfileController::class, 'ubahProfile'])->name('user-ubah-profile');
+//Export PDF User
+Route::get('/kta-digital', [KTAController::class, 'KTA'])->name('user-kta');
+Route::get('/export-pdf-kta', [KTAController::class, 'exportKTA'])->name('user-export-pdf-kta');
+//User Ubah Password
+Route::get('/ubah-password', [UbahPasswordController::class, 'ubahPassword'])->name('user-ubah-password');
+Route::post('/update-password', [UbahPasswordController::class, 'updatePassword'])->name('user-update-password');
 });
 

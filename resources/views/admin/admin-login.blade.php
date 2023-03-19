@@ -28,7 +28,14 @@
                                                     id="exampleInputPassword" name="password" autocomplete="off"
                                                     placeholder="Masukan Password Sesuai TMK">
                                             </div>
-
+                                            {{-- Awal Pesan Password Berhasil Diupdate --}}
+                                            @if ($message = Session::get('berhasil'))
+                                                <div class="alert alert-success" role="alert">
+                                                    {{ $message }}
+                                                </div>
+                                            @endif
+                                            {{-- Akhir Pesan Password Berhasil Diupdate --}}
+                                            {{-- Awal Pesan Password Salah --}}
                                             @if ($errors->any())
                                                 <div class="alert alert-danger">
                                                     @foreach ($errors->all() as $error)
@@ -36,7 +43,7 @@
                                                     @endforeach
                                                 </div>
                                             @endif
-
+                                            {{-- Akhir Pesan Password Salah --}}
                                             <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
                                             <hr>
                                         </form>
@@ -49,4 +56,5 @@
             </div>
         </div>
     </body>
+
 @endsection

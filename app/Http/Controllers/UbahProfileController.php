@@ -26,6 +26,7 @@ class UbahProfileController extends Controller
         if($user) {
             $user->nik = $request['nik'];
             $user->nama = $request['nama'];
+            $user->jeniskelamin = $request['jeniskelamin'];
             $user->jabatan = $request['jabatan'];
             $user->save();
 

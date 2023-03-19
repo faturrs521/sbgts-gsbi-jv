@@ -11,7 +11,7 @@
                               <div class="limit-box">
                                   <nav class="main-menu">
                                       <ul class="menu-area-main">
-                                          <li class="active"> <a href="#">Home</a> </li>
+                                          <li class="active"> <a href="{{ route('home') }}">Home</a> </li>
                                           <li class="nav-item dropdown">
                                               <a class="nav-link dropdown-toggle" href="#" role="button"
                                                   data-toggle="dropdown" aria-expanded="false">

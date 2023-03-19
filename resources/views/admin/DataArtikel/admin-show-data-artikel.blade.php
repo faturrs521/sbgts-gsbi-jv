@@ -21,17 +21,12 @@
                             <div class="blog-box">
                                 <figure><a href="https://www.infogsbi.or.id/"><img
                                             src="{{ asset('storage/public/' . $artikels->file) }}" alt="#" /></a>
-                                    <span>12 Agustus 2022</span>
+                                    <span>{{ date('d M Y', strtotime($artikels->created_at)) }}</span>
                                 </figure>
                                 <div class="travel">
                                 </div>
-                                <h3>Tim Relawan GSBI</h3>
-                                <p>Kawan-kawan relawan berinteraksi dengan warga yang terdampak bencana alam gempa bumi di
-                                    Kp. Pasir Peundeuy Desa. Talaga Kec. Cugenang di hari ke 2 tim relawan SBGTS-GSBI PT VCI
-                                    Peduli Cianjur membantu evakuasi sebuah mobil truk towing yang terperosok akibat tanah
-                                    longsor di Tapal Kuda, Cugenang - Cianjur, Kemudian Tim relawan SBGTS-GSBI PT VCI ikut
-                                    serta dalam evakuasi korban tanah longsor di Tapal Kuda akibat gempa bumi di Cianjur.
-                                </p>
+                                <h3>{{ $artikels->judul }}</h3>
+                                <p> {{ $artikels->deskripsi }}</p>
                             </div>
                         </div>
 

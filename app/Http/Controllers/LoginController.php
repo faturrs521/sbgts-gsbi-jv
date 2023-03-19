@@ -47,7 +47,7 @@ class LoginController extends Controller
             'remember_token' => Str::random(60),
         ]);
         $register->update();
-        return redirect('/login');
+        return redirect('/login')->with('success', 'Registrasi Berhasil');;
     }
 
     public function logout(Request $request) {
