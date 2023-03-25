@@ -1144,10 +1144,6 @@ nav.main-menu {
 	vertical-align: middle;
 }
 
-.main-menu ul>li:nth-child (6) {
-	padding-right: 0px;
-}
-
 .nav>li {
 	position: inherit;
 	display: inline-block;
@@ -1162,8 +1158,6 @@ nav.main-menu {
 	right: 0;
 	padding: 15px 0px;
 }
-
-.sub-full {}
 
 .simple-down {
 	padding: 15px;
@@ -1452,7 +1446,6 @@ width: 70px;
 height: 70px;
 margin-bottom: -35px;
 z-index: 999;
-
 }
 
 
@@ -1462,10 +1455,7 @@ z-index: 999;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-
 }
-
-
 
 .service {
 	padding-top: 90px;
@@ -2039,7 +2029,7 @@ ul.contant_icon li img {
 }
 
 .Team-bg {
-	background-color: #ad2100;
+	background-color: #fff;
 }
 
 .Team-bg .abouttitle h2 {

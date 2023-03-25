@@ -7,7 +7,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
     <!-- Favicon Logo Di Tittle-->
-    <link rel="icon" href="images/GSBI_Indonesia.jpg">
+    <link rel="icon" href="{{ asset('images/GSBI_Indonesia.jpg') }}">
     <title>SBGTS-GSBI-JV | {{ $title }}</title>
     <meta name="keywords" content="">
     <meta name="description" content="">

@@ -9,7 +9,7 @@ use App\Models\DataKategori;
 class LihatBeritaAcaraController extends Controller
 {
     public function lihatBeritaAcara() {
-        $artikels = DataArtikel::inRandomOrder()->OrderBy('id','DESC')->paginate(6);
+        $artikels = DataArtikel::OrderBy('created_at','DESC',)->paginate(10);
         return view('universal.lihat-berita-acara', compact('artikels'), [
             "title" => "Lihat Berita Acara"
         ]);

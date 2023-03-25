@@ -27,22 +27,22 @@ use App\Http\Controllers\LihatBeritaAcaraController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Penhunjung
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/kirim-email', [HomeController::class, 'kirimEmail'])->name('kirim-email');
 
 Route::get('/lihat-berita-acara', [LihatBeritaAcaraController::class, 'lihatBeritaAcara'])->name('lihat-berita-acara');
-
+Route::get('/detail-data-artikel{id}/{slug}', [DataArtikelController::class, 'detailDataArtikel'])->name('admin-detail-data-artikel');
 //Login
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login-proses', [LoginController::class, 'loginProses'])->name('login-proses');
-
 //Register
 Route::get('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/register-user', [LoginController::class, 'registerUser'])->name('register-user');
-
 //Logout
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
 
 //Route Group Middleware Untuk Admin
 Route::group(['middleware' => ['auth','hakakses:admin']], function(){
@@ -81,7 +81,6 @@ Route::post('/insert-data-artikel', [DataArtikelController::class, 'insertDataAr
 Route::get('/tampil-data-artikel/{id}', [DataArtikelController::class, 'tampilDataArtikel'])->name('admin-tampil-data-artikel');
 Route::post('/ubah-data-artikel/{id}', [DataArtikelController::class, 'ubahDataArtikel'])->name('admin-ubah-data-artikel');
 Route::get('/hapus-data-artikel/{id}', [DataArtikelController::class, 'hapusDataArtikel'])->name('admin-hapus-data-artikel');
-Route::get('/detail-data-artikel{id}', [DataArtikelController::class, 'detailDataArtikel'])->name('admin-detail-data-artikel');
 //Admin Kelola Data Kategori
 Route::get('/data-kategori', [DataKategoriController::class, 'dataKategori'])->name('admin-data-kategori');
 Route::get('/tambah-data-kategori', [DataKategoriController::class, 'tambahDataKategori'])->name('admin-tambah-data-kategori');

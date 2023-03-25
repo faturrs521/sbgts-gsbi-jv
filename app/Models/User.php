@@ -21,6 +21,7 @@ class User extends Authenticatable
         'nik',
         'nama',
         'foto',
+        'jeniskelamin',
         'jabatan',
         'password',
     ];

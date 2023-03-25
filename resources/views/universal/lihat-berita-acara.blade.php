@@ -13,40 +13,36 @@
         @include('layouts-universal.partials-universal.navbar')
         <!-- Akhir Ini Partials Sidebar -->
 
-        < <!-- our blog -->
-            <div id="blog" class="blog">
-                <div class="container">
+        <!-- our blog -->
+        <div id="blog" class="blog">
+            <div class="container">
+                <div class="row">
                     <div class="row">
-                        <div class="row">
-                            @foreach ($artikels as $artikel)
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                    <div class="blog-box">
-                                        <figure><a href="{{ route('lihat-berita-acara') }}"><img
-                                                    src="{{ asset('storage/public/' . $artikel->file) }}"
-                                                    alt="#" /></a>
-                                            <span>{{ date('d M Y', strtotime($artikel->created_at)) }}</span>
-                                        </figure>
-                                        <div class="travel">
-                                        </div>
-                                        <h3>{{ $artikel->judul }}</h3>
-                                        <p>{{ $artikel->deskripsi }}</p>
+                        @foreach ($artikels as $artikel)
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="blog-box">
+                                    <figure><a
+                                            href="{{ route('admin-detail-data-artikel', [$artikel->id, Str::slug($artikel->judul)]) }}"><img
+                                                src="{{ asset('storage/public/' . $artikel->file) }}" alt="#" /></a>
+                                        <span>{{ date('d M Y', strtotime($artikel->created_at)) }}</span>
+                                    </figure>
+                                    <div class="travel">
                                     </div>
+                                    <h3>{{ $artikel->judul }}</h3>
+                                    <p>{{ Str::limit($artikel->deskripsi, 150) }}</p>
                                 </div>
-                            @endforeach
-                        </div>
-
-                        {{ $artikels->render() }}
-
+                            </div>
+                        @endforeach
                     </div>
+                    {{ $artikels->render() }}
                 </div>
             </div>
-            </div>
-            <!-- end our blog -->
+        </div>
+        </div>
+        <!-- end our blog -->
 
-            <!-- Awal Ini Partials Footer -->
-            @include('layouts-universal.partials-universal.footer')
-            <!-- Akhir Ini Partials Footer -->
-
-
+        <!-- Awal Ini Partials Footer -->
+        @include('layouts-universal.partials-universal.footer')
+        <!-- Akhir Ini Partials Footer -->
     </body>
 @endsection

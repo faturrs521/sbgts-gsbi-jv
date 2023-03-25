@@ -35,12 +35,32 @@ class LoginController extends Controller
 
     public function registerUser(Request $request) {
         //dd($request->all());
+        $this->validate($request, [
+            'nik' => 'required|unique:users,nik',
+            'nama' => 'required|max:30',
+            'foto' => 'required|image|file',
+            'jeniskelamin' => 'required|max:20',
+            'jabatan' => 'required|max:20',
+            'password' => 'required|max:20',
+
+        ], [
+            'nik.unique' => 'Nik sudah terdaftar.',
+            'nik.required' => 'Nik wajib diisi',
+            'nama.required' => 'Nama wajib diisi',
+            'jeniskelamin.required' => 'Jenis kelamin wajib diisi',
+            'foto.image' => 'File ini bukan foto',
+            'foto.required' => 'Foto wajib diisi',
+            'jeniskelamin.required' => 'Jenis kelamin wajib diisi',
+            'jabatan.required' => 'Jabatan wajib diisi',
+            'password.required' => 'Password wajib diisi',
+        ]);
         $fileName=time().'.'.$request->foto->extension();
         $request->file('foto')->storeAs('public',$fileName);
         $register = User::create([
             'nik' => $request->nik,
             'nama' => $request->nama,
             'foto' => $fileName,
+            'jeniskelamin' => $request->jeniskelamin,
             'jabatan' => $request->jabatan,
             'level' => $request->level,
             'password' => bcrypt($request->password),

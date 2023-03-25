@@ -208,7 +208,8 @@
                     @foreach ($artikels as $artikel)
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <div class="blog-box">
-                                <figure><a href="{{ route('lihat-berita-acara') }}"><img
+                                <figure><a
+                                        href="{{ route('admin-detail-data-artikel', [$artikel->id, Str::slug($artikel->judul)]) }}"><img
                                             src="{{ asset('storage/public/' . $artikel->file) }}" alt="#" /></a>
                                     <span>{{ date('d M Y', strtotime($artikel->created_at)) }}</span>
                                 </figure>
@@ -217,12 +218,11 @@
                                     <p><a href="{{ route('lihat-berita-acara') }}">Lihat Lebih Banyak</a></p>
                                 </div>
                                 <h3>{{ $artikel->judul }}</h3>
-                                <p>{{ $artikel->deskripsi }}</p>
+                                <p>{{ Str::limit($artikel->deskripsi, 150) }}</p>
                             </div>
                         </div>
                     @endforeach
                 </div>
-
                 {{ $artikels->render() }}
             </div>
         </div>

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Storage;
 
 class DataArtikelController extends Controller
 {
-    public function detailDataArtikel($id) {
+    public function detailDataArtikel($id, $slug) {
         $artikels = DataArtikel::whereId($id)->first();
         return view('admin.DataArtikel.admin-show-data-artikel', compact('artikels'), [
             "title" => "Detail Data Artikel"
@@ -25,10 +25,10 @@ class DataArtikelController extends Controller
         $dataArtikel = DataArtikel::all();
         $dataKategori = DataKategori::all();
         if ($request->has('search')) {
-            $dataArtikel = DataArtikel::where('judul', 'LIKE', '%' . $request->search . '%')->paginate(3);
+            $dataArtikel = DataArtikel::where('judul', 'LIKE', '%' . $request->search . '%')->paginate(6);
             Session::put('halaman_url', request()->fullUrl());
         } else {
-            $dataArtikel = DataArtikel::paginate(3);
+            $dataArtikel = DataArtikel::paginate(6);
             Session::put('halaman_url', request()->fullUrl());
         }
         return view('admin.DataArtikel.admin-data-artikel', compact('dataArtikel','dataKategori'), [

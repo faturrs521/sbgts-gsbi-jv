@@ -7,7 +7,7 @@
     <meta name="author" content="">
 
     <!-- Favicon Logo Di Tittle-->
-    <link rel="icon" href="images/GSBI_Indonesia.jpg">
+    <link rel="icon" href="{{ asset('images/GSBI_Indonesia.jpg') }}">
 
     <title>SBGTS-GSBI-JV | {{ $title }}</title>
 

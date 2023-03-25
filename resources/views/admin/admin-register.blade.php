@@ -22,22 +22,49 @@
                                             <div class="form-group">
                                                 <input type="number" class="form-control form-control-user" name="nik"
                                                     autocomplete="off" placeholder="Masukan NIK">
+                                                @error('nik')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" class="form-control form-control-user" name="nama"
                                                     autocomplete="off" placeholder="Masukan Nama">
+                                                @error('nama')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                             <div class="mb-3">
                                                 <input type="file" name="foto" class="form-control" autocomplete="off"
                                                     accept="image/">
+                                                @error('foto')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1" class="form-label">Gender</label>
+                                                <select class="form-control" name="jeniskelamin"
+                                                    aria-label="Default select example">
+                                                    @error('jeniskelamin')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
+                                                    <option selected>Pilih Gender</option>
+                                                    <option value="pria">Pria</option>
+                                                    <option value="wanita">Wanita</option>
+                                                </select>
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" class="form-control form-control-user" name="jabatan"
                                                     autocomplete="off" placeholder="Masukan Jabatan">
+                                                @error('jabatan')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" class="form-control form-control-user"
                                                     placeholder="Masukan Password" name="password" autocomplete="off">
+                                                @error('password')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                             <button type="submit"
                                                 class="btn btn-primary btn-user btn-block">Submit</button>

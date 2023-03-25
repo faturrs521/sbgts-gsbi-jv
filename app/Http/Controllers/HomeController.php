@@ -12,7 +12,7 @@ use App\Mail\ContactMail;
 class HomeController extends Controller
 {
     public function home(){
-        $artikels = DataArtikel::inRandomOrder()->OrderBy('id','DESC')->paginate(6);
+        $artikels = DataArtikel::OrderBy('created_at','DESC',)->paginate(6);
         return view('universal.home', compact('artikels'), [
             "title" => "Home"
         ]);

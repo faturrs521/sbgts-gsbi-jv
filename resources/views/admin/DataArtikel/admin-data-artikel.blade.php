@@ -73,7 +73,7 @@
                                         <tr>
                                             <th scope="row">{{ $index + $dataArtikel->firstItem() }}</th>
                                             <td><a
-                                                    href="{{ route('admin-detail-data-artikel', $row->id) }}">{{ $row->judul }}</a>
+                                                    href="{{ route('admin-detail-data-artikel', [$row->id, Str::slug($row->judul)]) }}">{{ $row->judul }}</a>
                                             </td>
                                             <td>{{ $row->kategori->nama }}</td>
                                             <td>{{ Str::limit($row->deskripsi, 50) }}</td>

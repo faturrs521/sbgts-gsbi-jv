@@ -42,6 +42,7 @@
             <th>No</th>
             <th>Nik</th>
             <th>Nama</th>
+            <th>Foto</th>
             <th>Gender</th>
             <th>Jabatan</th>
             <th>DEPT</th>
@@ -54,6 +55,8 @@
                 <td>{{ $no++ }}</td>
                 <td>0{{ $row->nik }}</td>
                 <td>{{ $row->nama }}</td>
+                <td> <img src="{{ public_path('storage/public/' . $row->foto) }}" alt="" style="width: 40px;"></td>
+
                 <td>{{ $row->jeniskelamin }}</td>
                 <td>{{ $row->jabatan }}</td>
                 <td>{{ $row->dept }}</td>
