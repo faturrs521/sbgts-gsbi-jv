@@ -132,13 +132,12 @@ class DataPengurusController extends Controller
         return Excel::download(new DataPengurusExport,'Data Pengurus SBGTS-GSBI PT. VCI.xlsx');
     }
 
-    public function importExcel(Request $request) {
-        $data = $request->file('file');
-        $namaFile = $data->getClientOriginalName();
-        $data->move('DataPengurus', $namaFile);
-
-        Excel::import(new DataPengurusImport, \public_path('/DataPengurus/'.$namaFile));
-        return \redirect()->back();
-    }
+    // public function importExcel(Request $request) {
+    //     $data = $request->file('file');
+    //     $namaFile = $data->getClientOriginalName();
+    //     $data->move('DataPengurus', $namaFile);
+    //     Excel::import(new DataPengurusImport, \public_path('/DataPengurus/'.$namaFile));
+    //     return \redirect()->back();
+    // }
 
 }

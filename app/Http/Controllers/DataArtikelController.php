@@ -98,8 +98,7 @@ class DataArtikelController extends Controller
     }
 
 
-    public function hapusDataArtikel($id)
-    {
+    public function hapusDataArtikel($id) {
         $artikels = DataArtikel::whereId($id)->first();
         if(\File::exists('storage/public/'.$artikels->file)){
             \File::delete('storage/public/'.$artikels->file);

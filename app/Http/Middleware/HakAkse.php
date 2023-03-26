@@ -19,6 +19,6 @@ class HakAkse
         if(in_array($request->user()->role, $roles)) {
             return $next($request);
         }
-        return redirect('admin-dashboard');
+        return redirect('ketua-dashboard');
     }
 }

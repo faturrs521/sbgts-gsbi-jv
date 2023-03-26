@@ -18,9 +18,25 @@ class LoginController extends Controller
     }
 
     public function loginProses(Request $request) {
-        if(Auth::attempt($request->only('nik','password'))) {
-            session()->flash('success', 'Login berhasil!');
-            return redirect('/dashboard');
+        // if(Auth::attempt($request->only('nik','password'))) {
+        //     session()->flash('success', 'Login berhasil!');
+        //     return redirect('/dashboard');
+        // }
+        if (Auth::attempt($request->only('nik','password'))) {
+            $request->session()->regenerate();
+
+            $role = Auth::user()->role;
+
+            switch ($role) {
+                case 'admin':
+                    return redirect()->intended('/admin-dashboard');
+                    break;
+                case 'ketua':
+                    return redirect()->intended('/ketua-dashboard');
+                    break;
+                default:
+                    return redirect()->intended('/dashboard');
+            }
         }
         return back()->withErrors([
             'email' => 'Nik Atau Password Salah!',

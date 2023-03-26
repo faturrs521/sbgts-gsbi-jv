@@ -5,7 +5,7 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
             <div class="sidebar-brand-icon">
-                <img src="images/GSBI_Indonesia-removebg-preview.png" alt="" width="50px">
+                <img src="{{ asset('images/GSBI_Indonesia-removebg-preview.png') }}" alt="" width="50px">
             </div>
             <div class="sidebar-brand-text mx-3">SBGTS-GSBI PT. VCI</div>
         </a>
@@ -24,7 +24,7 @@
             <hr class="sidebar-divider">
         @endif
 
-
+        <!-- Awal Sidebar Admin -->
         @if (auth()->user()->role == 'admin')
             <!-- Nav Item Data Anggota -->
             <li class="nav-item">
@@ -69,9 +69,12 @@
             <!-- Garis -->
             <hr class="sidebar-divider">
         @endif
+        <!-- Akhir Sidebar Admin -->
 
+
+        <!-- Awal Sidebar User -->
         @if (auth()->user()->role == 'user')
-            <!-- Nav Item Data Berita Acara -->
+            <!-- Nav Item Cetak KTA -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('user-kta') }}">
                     <i class="fa fa-id-card" aria-hidden="true"></i>
@@ -91,6 +94,64 @@
             <!-- Garis -->
             <hr class="sidebar-divider">
         @endif
+        <!-- Akhir Sidebar User -->
+
+        <!-- Awal Sidebar Ketua -->
+        @if (auth()->user()->role == 'ketua')
+            <!-- Nav Item Data Berita Acara -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('ketua-data-anggota') }}">
+                    <i class="fas fa-users"></i>
+                    <span>Data Anggota</span></a>
+            </li>
+            <!-- Garis -->
+            <hr class="sidebar-divider">
+        @endif
+
+        @if (auth()->user()->role == 'ketua')
+            <!-- Nav Item Data Berita Acara -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('ketua-data-pengurus') }}">
+                    <i class="fas fa-users-cog"></i>
+                    <span>Data Pengurus</span></a>
+            </li>
+            <!-- Garis -->
+            <hr class="sidebar-divider">
+        @endif
+
+        @if (auth()->user()->role == 'ketua')
+            <!-- Nav Item Data Berita Acara -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('data-users') }}">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <span>Data Users</span></a>
+            </li>
+            <!-- Garis -->
+            <hr class="sidebar-divider">
+        @endif
+
+        @if (auth()->user()->role == 'ketua')
+            <!-- Nav Item Cetak KTA -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('ketua-kta') }}">
+                    <i class="fa fa-id-card" aria-hidden="true"></i>
+                    <span>KTA Digital</span></a>
+            </li>
+            <!-- Garis -->
+            <hr class="sidebar-divider">
+        @endif
+
+        @if (auth()->user()->role == 'ketua')
+            <!-- Nav Item Data Berita Acara -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('ketua-ubah-password') }}">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                    <span>Ubah Password</span></a>
+            </li>
+            <!-- Garis -->
+            <hr class="sidebar-divider">
+        @endif
+        <!-- Akhir Sidebar Ketua -->
 
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">

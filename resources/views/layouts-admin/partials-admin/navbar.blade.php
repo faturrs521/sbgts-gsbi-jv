@@ -44,6 +44,14 @@
                      </a>
                      <div class="dropdown-divider"></div>
                  @endif
+
+                 @if (auth()->user()->role == 'ketua')
+                     <a class="dropdown-item" href="{{ route('ketua-tampil-ubah-profile') }}">
+                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                         Profile
+                     </a>
+                     <div class="dropdown-divider"></div>
+                 @endif
                  <form action="/logout" method="POST">
                      @csrf
                      <button type="submit" class="dropdown-item"> <i

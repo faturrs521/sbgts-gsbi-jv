@@ -107,6 +107,6 @@ class DataAnggotaController extends Controller
         $data->move('DataAnggota', $namaFile);
 
         Excel::import(new DataAnggotaImport, \public_path('/DataAnggota/'.$namaFile));
-        return \redirect()->back();
+        return \redirect()->back()->with('success', 'Data Berhasil Di Import');
     }
 }
