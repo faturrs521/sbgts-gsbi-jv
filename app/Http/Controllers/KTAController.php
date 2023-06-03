@@ -40,14 +40,13 @@ class KTAController extends Controller
             }
         }
     }
-
     public function ketuaExportKTA() {
 
         $kta = User::all();
         view()->share('kta', $kta);
         $pdf = PDF::loadview('ketua.ketua-kta-pdf');
         return $pdf->download('KTA SBGTS-GSBI PT. VCI.pdf');
-}
+    }
 
 
 }

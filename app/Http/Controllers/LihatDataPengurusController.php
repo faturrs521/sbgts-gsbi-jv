@@ -22,7 +22,7 @@ class LihatDataPengurusController extends Controller
         Session::put('halaman_url', request()->fullUrl());
     }
 
-        return view('ketua.ketua-data-pengurus', compact('dataPengurus'), [
+        return view('ketua.DataPengurus.ketua-data-pengurus', compact('dataPengurus'), [
             "title" => "Lihat Data Pengurus"
         ]);
     }
@@ -31,7 +31,7 @@ class LihatDataPengurusController extends Controller
     {
         $dataPengurus = DataPengurus::all();
         view()->share('dataPengurus', $dataPengurus);
-        $pdf = PDF::loadview('ketua.data-pengurus-pdf');
+        $pdf = PDF::loadview('ketua.DataPengurus.data-pengurus-pdf');
         return $pdf->download('Data Pengurus SBGTS-GSBI PT. VCI.pdf');
     }
 

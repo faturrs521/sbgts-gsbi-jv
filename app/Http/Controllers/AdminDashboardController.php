@@ -12,4 +12,12 @@ class AdminDashboardController extends Controller
             ["title" => "Dashboard"]
         );
     }
+
+
+    public function userDashboard() {
+        return view(
+            'user.user-dashboard',
+            ["title" => "Dashboard"]
+        );
+    }
 }

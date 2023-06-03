@@ -23,7 +23,7 @@ class LihatDataAnggotaController extends Controller
         Session::put('halaman_url', request()->fullUrl());
     }
 
-        return view('ketua.ketua-data-anggota', compact('dataAnggota'), [
+        return view('ketua.DataAnggota.ketua-data-anggota', compact('dataAnggota'), [
             "title" => "Lihat Data Anggota"
         ]);
     }
@@ -32,7 +32,7 @@ class LihatDataAnggotaController extends Controller
     {
         $dataAnggota = DataAnggota::all();
         view()->share('dataAnggota', $dataAnggota);
-        $pdf = PDF::loadview('ketua.data-anggota-pdf');
+        $pdf = PDF::loadview('ketua.DataAnggota.data-anggota-pdf');
         return $pdf->download('Data Anggota SBGTS-GSBI PT. VCI.pdf');
     }
 

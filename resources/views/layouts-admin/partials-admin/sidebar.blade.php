@@ -10,16 +10,15 @@
             <div class="sidebar-brand-text mx-3">SBGTS-GSBI PT. VCI</div>
         </a>
 
-        <!-- Garis -->
-        <hr class="sidebar-divider">
-
-        <!-- Nav Item Dashboard -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('admin-dashboard') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
-        </li>
         @if (auth()->user()->role == 'admin')
+            <!-- Garis -->
+            <hr class="sidebar-divider">
+            <!-- Nav Item Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin-dashboard') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
             <!-- Garis -->
             <hr class="sidebar-divider">
         @endif
@@ -74,6 +73,17 @@
 
         <!-- Awal Sidebar User -->
         @if (auth()->user()->role == 'user')
+            <!-- Nav Item Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('user-dashboard') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+            <!-- Garis -->
+            <hr class="sidebar-divider">
+        @endif
+
+        @if (auth()->user()->role == 'user')
             <!-- Nav Item Cetak KTA -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('user-kta') }}">
@@ -97,6 +107,18 @@
         <!-- Akhir Sidebar User -->
 
         <!-- Awal Sidebar Ketua -->
+
+        @if (auth()->user()->role == 'ketua')
+            <!-- Nav Item Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin-dashboard') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+            <!-- Garis -->
+            <hr class="sidebar-divider">
+        @endif
+
         @if (auth()->user()->role == 'ketua')
             <!-- Nav Item Data Berita Acara -->
             <li class="nav-item">
@@ -114,6 +136,17 @@
                 <a class="nav-link" href="{{ route('ketua-data-pengurus') }}">
                     <i class="fas fa-users-cog"></i>
                     <span>Data Pengurus</span></a>
+            </li>
+            <!-- Garis -->
+            <hr class="sidebar-divider">
+        @endif
+
+        @if (auth()->user()->role == 'ketua')
+            <!-- Nav Item Data Berita Acara -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('ketua-data-artikel') }}">
+                    <i class="fas fa-newspaper"></i>
+                    <span>Berita Acara</span></a>
             </li>
             <!-- Garis -->
             <hr class="sidebar-divider">

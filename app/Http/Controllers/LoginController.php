@@ -34,6 +34,7 @@ class LoginController extends Controller
                 case 'ketua':
                     return redirect()->intended('/ketua-dashboard');
                     break;
+
                 default:
                     return redirect()->intended('/dashboard');
             }

@@ -19,7 +19,7 @@ class DataUsersController extends Controller
             Session::put('halaman_url', request()->fullUrl());
         }
 
-        return view('ketua.data-users', compact('dataUsers'), [
+        return view('ketua.DataUsers.data-users', compact('dataUsers'), [
             "title" => "Ubah Data User"
         ]);
     }
@@ -27,7 +27,7 @@ class DataUsersController extends Controller
     public function tampilUsers($id) {
 
         $ubah = User::find($id);
-        return view('ketua.tampil-data-users', compact('ubah'), [
+        return view('ketua.DataUsers.tampil-data-users', compact('ubah'), [
             "title" => "Ubah Data Users  "
         ]);
     }
@@ -38,8 +38,6 @@ class DataUsersController extends Controller
         $ubah->jabatan = $request->input('jabatan');
         $ubah->jeniskelamin = $request->input('jeniskelamin');
         $ubah->role = $request->input('level');
-
-
         $ubah->update();
             return redirect()->route('data-users')->with('success', 'Data Berhasil Di Ubah');
     }
@@ -49,7 +47,6 @@ class DataUsersController extends Controller
         if(\File::exists('storage/public/'.$hapus->foto)){
             File::delete('storage/public/'.$hapus->foto);
         }
-
         User::whereId($id)->delete();
         return redirect()->route('data-users')->with('success', 'Data Berhasil Di Hapus');
     }

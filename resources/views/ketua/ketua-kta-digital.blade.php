@@ -29,7 +29,8 @@
                                         <div class="card">
                                             <div class="card-header">Data Anggota</div>
                                             <div class="card-body">
-                                                <form action="/ubah-profile" method="POST" enctype="multipart/form-data">
+                                                <form action="/ketua-export-pdf-kta" method="POST"
+                                                    enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="form-group">
                                                         <label for="naik">Nik</label>
@@ -56,7 +57,7 @@
                                                             value="{{ $user['jabatan'] }}">
                                                     </div>
                                                     <!-- Awal Export PDF -->
-                                                    <a href="{{ route('user-export-pdf-kta') }}" class="btn btn-primary">
+                                                    <a href="{{ route('ketua-export-pdf-kta') }}" class="btn btn-primary">
                                                         <i class="fa fa-id-card" aria-hidden="true"></i>
                                                         Cetak KTA</a>
                                                     <!-- Akhir Export PDF -->

@@ -47,7 +47,7 @@
                                     <div class="card border-left-success shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
-                                                <a href="{{ route('admin-data-anggota') }}" class="col mr-2">
+                                                <a href="{{ route('admin-data-pengurus') }}" class="col mr-2">
                                                     <div class="text-m font-weight-bold text-success text-uppercase mb-1">
                                                         Data Pengurus </div>
                                                 </a>
@@ -65,7 +65,7 @@
                                     <div class="card border-left-warning shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
-                                                <a href="{{ route('admin-data-anggota') }}" class="col mr-2">
+                                                <a href="{{ route('admin-data-kategori') }}" class="col mr-2">
                                                     <div class="text-m font-weight-bold text-warning text-uppercase mb-1">
                                                         Data Kategori </div>
                                                 </a>
@@ -83,7 +83,7 @@
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
-                                                <a href="{{ route('admin-data-anggota') }}" class="col mr-2">
+                                                <a href="{{ route('admin-data-artikel') }}" class="col mr-2">
                                                     <div class="text-m font-weight-bold text-info text-uppercase mb-1">
                                                         Data Berita Acara </div>
                                                 </a>
@@ -95,11 +95,117 @@
                                     </div>
                                 </div>
                                 <!-- Akhir Data Artikel -->
+                            @endif
+                            @if (auth()->user()->role == 'ketua')
+                                <!-- Awal Data Anggota -->
+                                <div class="col-xl-3 mb-3">
+                                    <div class="card border-left-primary shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <a href="{{ route('ketua-data-anggota') }}" class="col mr-2">
+                                                    <div class="text-m font-weight-bold text-primary text-uppercase mb-1">
+                                                        Data Anggota</div>
+                                                </a>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-users"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Akhir Data Anggota -->
+
+                                <!-- Awal Data Pengurus -->
+                                <div class="col-xl-3 mb-3">
+                                    <div class="card border-left-success shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <a href="{{ route('ketua-data-pengurus') }}" class="col mr-2">
+                                                    <div class="text-m font-weight-bold text-success text-uppercase mb-1">
+                                                        Data Pengurus </div>
+                                                </a>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-users-cog"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Akhir Data Pengurus -->
+
+                                <!-- Awal Data Artikel -->
+                                <div class="col-xl-3 mb-3">
+                                    <div class="card border-left-info shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <a href="{{ route('ketua-data-artikel') }}" class="col mr-2">
+                                                    <div class="text-m font-weight-bold text-info text-uppercase mb-1">
+                                                        Data Berita Acara </div>
+                                                </a>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-newspaper"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Akhir Data Artikel -->
+
+                                <!-- Awal Data Users -->
+                                <div class="col-xl-3 mb-3">
+                                    <div class="card border-left-secondary shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <a href="{{ route('data-users') }}" class="col mr-2">
+                                                    <div class="text-m font-weight-bold text-info text-uppercase mb-1">
+                                                        Data Users </div>
+                                                </a>
+                                                <div class="col-auto">
+                                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Akhir Data Users -->
+
+                                <!-- Awal KTA Digital -->
+                                <div class="col-xl-3 mb-3">
+                                    <div class="card border-left-danger shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <a href="{{ route('ketua-kta') }}" class="col mr-2">
+                                                    <div class="text-m font-weight-bold text-info text-uppercase mb-1">
+                                                        KTA Digital </div>
+                                                </a>
+                                                <div class="col-auto">
+                                                    <i class="fa fa-id-card" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Akhir KTA Digital -->
+
+                                <!-- Awal Ubah Password -->
+                                <div class="col-xl-3 mb-3">
+                                    <div class="card border-left-warning shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <a href="{{ route('ketua-ubah-password') }}" class="col mr-2">
+                                                    <div class="text-m font-weight-bold text-info text-uppercase mb-1">
+                                                        ubah Password </div>
+                                                </a>
+                                                <div class="col-auto">
+                                                    <i class="fa fa-key" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Akhir Ubah Password -->
+                            @endif
                         </div>
-                        @endif
-                        @if (auth()->user()->role == 'user')
-                            <h1>Halaman User</h1>
-                        @endif
                     </div>
                 </div>
                 <!-- Akhir Konten -->

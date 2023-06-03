@@ -19,6 +19,7 @@ use App\Http\Controllers\AdminDashboardController;
 
 use App\Http\Controllers\LihatBeritaAcaraController;
 use App\Http\Controllers\LihatDataAnggotaController;
+use App\Http\Controllers\LihatDataArtikelController;
 use App\Http\Controllers\LihatDataPengurusController;
 
 /*
@@ -98,7 +99,7 @@ Route::get('/hapus-data-kategori/{id}', [DataKategoriController::class, 'hapusDa
 //Route Group Middleware Untuk User
 Route::group(['middleware' => ['auth','hakakses:user']], function(){
 // User
-Route::get('/dashboard', [AdminDashboardController::class, 'adminDashboard'])->name('admin-dashboard');
+Route::get('/dashboard', [AdminDashboardController::class, 'userDashboard'])->name('user-dashboard');
 //User Ubah Profile
 Route::get('/tampil-ubah-profile', [UbahProfileController::class, 'tampilUbahProfile'])->name('user-tampil-ubah-profile');
 Route::post('/ubah-profile', [UbahProfileController::class, 'ubahProfile'])->name('user-ubah-profile');
@@ -122,25 +123,28 @@ Route::get('/ketua-export-pdf-data-anggota', [LihatDataAnggotaController::class,
 Route::get('/ketua-export-excel-data-anggota', [DataAnggotaController::class, 'exportExcel'])->name('ketua-export-excel-data-anggota');
 //Import Excel
 Route::post('/ketua-import-excel-data-anggota', [DataAnggotaController::class, 'importExcel'])->name('ketua-import-excel-data-anggota');
-//Admin Kelola Data Pengurus
-Route::get('/ketua-data-pengurus', [LihatDataPengurusController::class, 'lihatDataPengurus'])->name('ketua-data-pengurus');
+//Admin Lihat Data Pengurus
+Route::get('/lihat-data-pengurus', [LihatDataPengurusController::class, 'lihatDataPengurus'])->name('ketua-data-pengurus');
 //Ketua Export PDF
 Route::get('/ketua-export-pdf-data-pengurus', [LihatDataPengurusController::class, 'exportPDF'])->name('ketua-export-pdf-data-pengurus');
 //Export Excel
 Route::get('/ketua-export-excel', [DataPengurusController::class, 'exportExcel'])->name('ketua-export-excel-data-pengurus');
+
+Route::get('/lihat-data-artikel', [LihatDataArtikelController::class, 'lihatDataArtikel'])->name('ketua-data-artikel');
+
+
 //Ketua Kelola Data Users
 Route::get('/data-users', [DataUsersController::class, 'dataUsers'])->name('data-users');
 Route::get('/tampil-data-users/{id}', [DataUsersController::class, 'tampilUsers'])->name('ketua-tampil-data-users');
 Route::post('/ubah-data-users/{id}', [DataUsersController::class, 'ubahDataUsers'])->name('ketua-ubah-users');
 Route::get('/hapus-data-users/{id}', [DataUsersController::class, 'hapusDataUsers'])->name('ketua-hapus-data-users');
 //User Ubah Profile
-Route::get('/ketua/tampil-ubah-profile', [UbahProfileController::class, 'ketuaTampilUbahProfile'])->name('ketua-tampil-ubah-profile');
+Route::get('/ketua-tampil-ubah-profile', [UbahProfileController::class, 'ketuaTampilUbahProfile'])->name('ketua-tampil-ubah-profile');
 Route::post('/ketua-ubah-profile', [UbahProfileController::class, 'ketuaUbahProfile'])->name('ketua-ubah-profile');
 //Ketua Ubah Password
 Route::get('/ketua-ubah-password', [UbahPasswordController::class, 'ketuaUbahPassword'])->name('ketua-ubah-password');
 Route::post('/ketua-update-password', [UbahPasswordController::class, 'ketuaUpdatePassword'])->name('ketua-update-password');
-
-
+//Ketua Export KTA
 Route::get('/ketua-kta-digital', [KTAController::class, 'ketuaKTA'])->name('ketua-kta');
-Route::get('/ketua-export-pdf-kta', [KTAController::class, 'ketuaExportKTA'])->name('user-export-pdf-kta');
+Route::get('/ketua-export-pdf-kta', [KTAController::class, 'ketuaExportKTA'])->name('ketua-export-pdf-kta');
 });

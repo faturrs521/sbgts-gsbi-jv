@@ -29,7 +29,8 @@
                                         <div class="card">
                                             <div class="card-header">Data Anggota</div>
                                             <div class="card-body">
-                                                <form action="/ubah-profile" method="POST" enctype="multipart/form-data">
+                                                <form action="/user-export-pdf-kta" method="POST"
+                                                    enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="form-group">
                                                         <label for="naik">Nik</label>

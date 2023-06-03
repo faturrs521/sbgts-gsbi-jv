@@ -45,7 +45,7 @@
                                         @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Kategori</label>
+                                        <label for="exampleInputEmail1" class="form-label">Gender</label>
                                         <select class="form-control" name="jeniskelamin"
                                             aria-label="Default select example">
                                             @error('jeniskelamin')
@@ -57,7 +57,7 @@
                                         </select>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Kode Dept.</label>
+                                        <label for="exampleInputEmail1" class="form-label">Kode Dept</label>
                                         <input type="text" name="kodedept" class="form-control" autocomplete="off">
                                         @error('kodedept')
                                             <div class="alert alert-danger">{{ $message }}</div>

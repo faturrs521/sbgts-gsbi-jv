@@ -40,7 +40,7 @@
                                                     <div class="form-group">
                                                         <label for="nama">Nama</label>
                                                         <input type="text" class="form-control" name="nama"
-                                                            id="nama" placeholder="Nama Anda"
+                                                            id="nama" placeholder="Nama Anda" autocomplete="off"
                                                             value="{{ $user['nama'] }}">
                                                     </div>
                                                     <div class="mb-3">
