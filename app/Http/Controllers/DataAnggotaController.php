@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use PDF;
+use App\Models\User;
 use App\Models\DataAnggota;
 use Illuminate\Http\Request;
 use App\Exports\DataAnggotaExport;
 use App\Imports\DataAnggotaImport;
+use App\Http\Controllers\Controller;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Session;
 
@@ -43,6 +45,7 @@ class DataAnggotaController extends Controller
             'kodedept' => 'required|max:50',
             'dept' => 'required|max:20',
             'tmk' => 'required|max:15',
+            'status' => 'required|',
         ], [
             'nik.unique' => 'Nik sudah terdaftar.',
             'nik.required' => 'Nik wajib diisi',
@@ -51,7 +54,12 @@ class DataAnggotaController extends Controller
             'kodedept.required' => 'Kode dept wajib diisi',
             'dept.required' => 'Dept wajib diisi',
             'tmk.required' => 'Tanggal masuk kerja wajib diisi',
+            'status.required' => 'Status wajib diisi',
         ]);
+        $user = User::where('nik', $request->input('nik'))->first();
+        if ($user) {
+            return redirect()->back()->with('error', 'NIK Sudah Ada Pada Pengguna Lain.');
+         }
         $dataAnggota = DataAnggota::create([
             'nik' => $request->nik,
             'nama' => $request->nama,
@@ -59,6 +67,7 @@ class DataAnggotaController extends Controller
             'kodedept' => $request->kodedept,
             'dept' => $request->dept,
             'tmk' => $request->tmk,
+            'status' => $request->status,
         ]);
         return redirect()->route('admin-data-anggota')->with('success', 'Data Berhasil Di Tambahkan');
     }
@@ -74,8 +83,15 @@ class DataAnggotaController extends Controller
 
     public function ubahDataAnggota(Request $request, $id)
     {
-        $ubah = DataAnggota::find($id);
-        $ubah->update($request->all());
+        $dataAnggota = DataAnggota::find($id);
+        $dataAnggota->nik = $request->input('nik');
+        $dataAnggota->nama = $request->input('nama');
+        $dataAnggota->jeniskelamin = $request->input('jeniskelamin');
+        $dataAnggota->kodedept = $request->input('kodedept');
+        $dataAnggota->dept = $request->input('dept');
+        $dataAnggota->tmk = $request->input('tmk');
+        $dataAnggota->status = $request->input('status');
+        $dataAnggota->update();
         if(session('halaman_url')) {
             return redirect(session('halaman_url'))->with('success', 'Data Berhasil Di Ubah');
         }

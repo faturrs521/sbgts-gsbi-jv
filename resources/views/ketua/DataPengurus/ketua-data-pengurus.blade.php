@@ -28,7 +28,7 @@
                         <div class="row g-3 align-items-center">
                             <!-- Awal Cari Data -->
                             <div class="col-auto">
-                                <form action="{{ route('admin-data-pengurus') }}" method="GET">
+                                <form action="{{ route('ketua-data-pengurus') }}" method="GET">
                                     <input type="search" id="" class="form-control" name="search"
                                         placeholder="Cari Nama" autocomplete="off">
                                 </form>

@@ -269,12 +269,9 @@
         </div>
         <!-- end Testimonial -->
 
-
-
         <!-- Awal Ini Partials Footer -->
         @include('layouts-universal.partials-universal.footer')
         <!-- Akhir Ini Partials Footer -->
-
 
     </body>
 @endsection

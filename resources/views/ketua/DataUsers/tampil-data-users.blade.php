@@ -22,7 +22,7 @@
 
                     <!-- Awal Konten -->
                     <div class="container-fluid">
-                        <h1 class="h3 mb-4 text-gray-800 text-center">Ubah Data Pengurus SBGTS-GSBI PT. Victory Chingluh
+                        <h1 class="h3 mb-4 text-gray-800 text-center">Ubah Data Users SBGTS-GSBI PT. Victory Chingluh
                             Indonesia
                         </h1>
 

@@ -28,9 +28,9 @@
                         <div class="row g-3 align-items-center">
                             <!-- Awal Cari Data -->
                             <div class="col-auto">
-                                <form action="{{ route('ketua-data-anggota') }}" method="GET">
+                                <form action="{{ route('data-users') }}" method="GET">
                                     <input type="search" id="" class="form-control" name="search"
-                                        placeholder="Cari Kode Dept" autocomplete="off">
+                                        placeholder="Cari Nik" autocomplete="off">
                                 </form>
                             </div>
                             <!-- Akhir Cari Data -->

@@ -12,7 +12,7 @@ class DataUsersController extends Controller
     public function dataUsers(Request $request) {
         $dataUsers = User::all();
         if ($request->has('search')) {
-            $dataUsers = User::where('judul', 'LIKE', '%' . $request->search . '%')->paginate(6);
+            $dataUsers = User::where('nama', 'LIKE', '%' . $request->search . '%')->paginate(6);
             Session::put('halaman_url', request()->fullUrl());
         } else {
             $dataUsers = User::paginate(6);

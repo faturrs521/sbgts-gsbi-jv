@@ -29,7 +29,7 @@
                         <div class="row g-3 align-items-center">
                             <!-- Awal Cari Data -->
                             <div class="col-auto">
-                                <form action="{{ route('admin-data-artikel') }}" method="GET"
+                                <form action="{{ route('ketua-data-artikel') }}" method="GET"
                                     enctype="multipart/form-data">
                                     <input type="search" id="" class="form-control" name="search"
                                         placeholder="Cari Nama" autocomplete="off">

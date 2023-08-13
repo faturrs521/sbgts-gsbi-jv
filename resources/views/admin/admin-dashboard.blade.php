@@ -32,6 +32,9 @@
                                                 <a href="{{ route('admin-data-anggota') }}" class="col mr-2">
                                                     <div class="text-m font-weight-bold text-primary text-uppercase mb-1">
                                                         Data Anggota</div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                        {{ $dataAnggota }}
+                                                    </div>
                                                 </a>
                                                 <div class="col-auto">
                                                     <i class="fas fa-users"></i>
@@ -50,6 +53,9 @@
                                                 <a href="{{ route('admin-data-pengurus') }}" class="col mr-2">
                                                     <div class="text-m font-weight-bold text-success text-uppercase mb-1">
                                                         Data Pengurus </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                        {{ $dataPengurus }}
+                                                    </div>
                                                 </a>
                                                 <div class="col-auto">
                                                     <i class="fas fa-users-cog"></i>
@@ -68,6 +74,9 @@
                                                 <a href="{{ route('admin-data-kategori') }}" class="col mr-2">
                                                     <div class="text-m font-weight-bold text-warning text-uppercase mb-1">
                                                         Data Kategori </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                        {{ $dataKategori }}
+                                                    </div>
                                                 </a>
                                                 <div class="col-auto">
                                                     <i class="fa fa-list-ul"></i>
@@ -86,6 +95,9 @@
                                                 <a href="{{ route('admin-data-artikel') }}" class="col mr-2">
                                                     <div class="text-m font-weight-bold text-info text-uppercase mb-1">
                                                         Data Berita Acara </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                        {{ $dataArtikel }}
+                                                    </div>
                                                 </a>
                                                 <div class="col-auto">
                                                     <i class="fas fa-newspaper"></i>
@@ -105,6 +117,9 @@
                                                 <a href="{{ route('ketua-data-anggota') }}" class="col mr-2">
                                                     <div class="text-m font-weight-bold text-primary text-uppercase mb-1">
                                                         Data Anggota</div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                        {{ $dataAnggota }}
+                                                    </div>
                                                 </a>
                                                 <div class="col-auto">
                                                     <i class="fas fa-users"></i>
@@ -123,6 +138,9 @@
                                                 <a href="{{ route('ketua-data-pengurus') }}" class="col mr-2">
                                                     <div class="text-m font-weight-bold text-success text-uppercase mb-1">
                                                         Data Pengurus </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                        {{ $dataPengurus }}
+                                                    </div>
                                                 </a>
                                                 <div class="col-auto">
                                                     <i class="fas fa-users-cog"></i>
@@ -141,6 +159,9 @@
                                                 <a href="{{ route('ketua-data-artikel') }}" class="col mr-2">
                                                     <div class="text-m font-weight-bold text-info text-uppercase mb-1">
                                                         Data Berita Acara </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                        {{ $dataArtikel }}
+                                                    </div>
                                                 </a>
                                                 <div class="col-auto">
                                                     <i class="fas fa-newspaper"></i>
@@ -159,6 +180,9 @@
                                                 <a href="{{ route('data-users') }}" class="col mr-2">
                                                     <div class="text-m font-weight-bold text-info text-uppercase mb-1">
                                                         Data Users </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                        {{ $users }}
+                                                    </div>
                                                 </a>
                                                 <div class="col-auto">
                                                     <i class="fa fa-user" aria-hidden="true"></i>

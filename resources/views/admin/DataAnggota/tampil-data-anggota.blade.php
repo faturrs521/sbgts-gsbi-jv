@@ -65,6 +65,14 @@
                                         <input type="text" name="tmk" class="form-control" id="exampleInputEmail1"
                                             aria-describedby="emailHelp" autocomplete="off" value="{{ $ubah->tmk }}">
                                     </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Gender</label>
+                                        <select class="form-control" name="status" aria-label="Default select example">
+                                            <option selected>{{ $ubah->status }}</option>
+                                            <option value="aktif">Aktif</option>
+                                            <option value="non aktif">Non Aktif</option>
+                                        </select>
+                                    </div>
                                     <button type="submit" class="btn btn-primary">Ubah</button>
                                 </form>
                             </div>

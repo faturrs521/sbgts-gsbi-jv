@@ -110,6 +110,7 @@
                                         <th scope="col">Kode DEPT</th>
                                         <th scope="col">DEPT</th>
                                         <th scope="col">TMK</th>
+                                        <th scope="col">Status</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
@@ -120,17 +121,18 @@
                                     @foreach ($dataAnggota as $index => $row)
                                         <tr>
                                             <th scope="row">{{ $index + $dataAnggota->firstItem() }}</th>
-                                            <td>0{{ $row->nik }}</td>
+                                            <td>{{ $row->nik }}</td>
                                             <td>{{ $row->nama }}</td>
                                             <td>{{ $row->jeniskelamin }}</td>
                                             <td>{{ $row->kodedept }}</td>
                                             <td>{{ $row->dept }}</td>
                                             <td>{{ $row->tmk }}</td>
+                                            <td>{{ $row->status }}</td>
                                             <td>
                                                 <a href="{{ route('admin-tampil-data-anggota', $row->id) }}"
                                                     class="btn btn-warning fas fa-edit"></a>
-                                                <button type="submit" class="btn btn-danger fas fa-trash-alt"
-                                                    onclick="deleteData({{ $row->id }})"></button>
+                                                {{-- <button type="submit" class="btn btn-danger fas fa-trash-alt"
+                                                    onclick="deleteData({{ $row->id }})"></button> --}}
                                             </td>
                                             <!-- Awal Validasi Sweet Alert 2 Hapus -->
                                             <script>

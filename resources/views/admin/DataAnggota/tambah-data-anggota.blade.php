@@ -77,6 +77,17 @@
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Status</label>
+                                        <select class="form-control" name="status" aria-label="Default select example">
+                                            @error('status')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
+                                            <option selected>Pilih Status</option>
+                                            <option value="aktif">Aktif</option>
+                                            <option value="nonaktif">Non Aktif</option>
+                                        </select>
+                                    </div>
 
                                     <button type="submit" class="btn btn-primary">Tambah</button>
                                 </form>
